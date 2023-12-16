@@ -1,0 +1,103 @@
+
+
+#btnBack
+{
+    -fx-background-color: transparent;
+    -fx-text-fill: #03e9f4;
+    -fx-font-size: 16px;
+    -fx-font-family: 'Ink Free';
+    -fx-border-color: #0077cc; /* Màu viền của button */
+    -fx-border-width: 0 0 2 0; 
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, transparent, 0, 0, 0, 0);
+ 
+}
+
+#btnBack:hover
+{
+	-fx-background-color: #03e9f4;
+    -fx-text-fill: #fff;
+    -fx-border-width: 1;
+    -fx-border-color: #03e9f4;
+    -fx-effect: dropshadow(gaussian, #03e9f4, 10, 0, 0, 0);
+    -fx-transition: color 0.5s, background-color 0.5s;
+}
+
+
+	
+#btnBack:pressed
+{
+     -fx-padding: 10 15 13 15;
+     -fx-background-insets: 2 0 0 0,2 0 3 0,2 0 4 0,2 0 5 0;
+
+}
+
+
+#btnHelp {
+  	-fx-shape: "M 0,0 A 30,30 0 1,1 1,0 Z"; /* Định dạng hình tròn */
+    -fx-min-width: 50px; /* Độ rộng tối thiểu của button */
+    -fx-min-height: 50px; /* Độ cao tối thiểu của button */
+    -fx-max-width: 50px; /* Độ rộng tối đa của button */
+    -fx-max-height: 50px; /* Độ cao tối đa của button */
+    -fx-background-color: transparent; /* Màu nền của button */
+    -fx-border-color: white; /* Màu viền của button */
+    -fx-border-width: 2px; /* Độ dày viền */
+    -fx-text-fill: #03e9f4; /* Màu chữ của button */
+    -fx-font-size: 12px; /* Kích thước chữ của button */
+    -fx-font-weight: bold; /* Chữ đậm */
+ 	-fx-effect: dropshadow(gaussian, #03e9f4, 10, 0, 0, 0);
+    -fx-transition: color 0.5s, background-color 0.5s;   
+    -fx-font-family: 'Ink Free';
+ }
+  
+
+#btnHelp:hover {
+    -fx-background-color: #03e9f4;
+    -fx-text-fill: #fff;
+    fx-border-width: 1;
+    -fx-border-color: #03e9f4;
+    -fx-effect: dropshadow(gaussian, #03e9f4, 10, 0, 0, 0);
+    -fx-transition: color 0.5s, background-color 0.5s;
+	
+}
+
+
+#introductionLabel{
+	-fx-text-fill: black;
+    -fx-background-color:  #B0B0B0;
+    -fx-padding: 10px;
+    -fx-effect: 
+            innershadow(gaussian, rgba(0,0,0,0.8), 10, 0, 0, 0),
+            dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+}
+
+
+#AnchorPaneCenter {
+	-fx-border-color: #e80000;
+	-fx-border-width: 5 0 0 0;
+}
+
+#btnInfection {
+    -fx-background-color: transparent;
+    -fx-text-fill: #03e9f4;
+    -fx-font-size: 16px;
+    -fx-font-family: 'Ink Free';
+    -fx-border-width: 0;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, transparent, 0, 0, 0, 0);
+    -fx-border-color: #0077cc; /* Màu viền của button */
+    -fx-border-width: 0 0 2 0; 
+
+}
+
+#btnInfection:hover
+{
+    -fx-background-color: #03e9f4;
+    -fx-text-fill: #fff;
+    -fx-border-width: 1;
+    -fx-border-color: #03e9f4;
+    -fx-effect: dropshadow(gaussian, #03e9f4, 10, 0, 0, 0);
+    -fx-transition: color 0.5s, background-color 0.5s;
+    
+}
+
