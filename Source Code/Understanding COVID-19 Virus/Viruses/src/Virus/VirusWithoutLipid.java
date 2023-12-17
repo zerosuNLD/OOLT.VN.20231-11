@@ -10,7 +10,8 @@ public class VirusWithoutLipid extends Virus implements Infection {
     private String introduction;
     private String individual;
     private Image image;
-
+    private Image image2;
+    
 //    private static int nbId = 0;
 
     // Constructors
@@ -30,13 +31,14 @@ public class VirusWithoutLipid extends Virus implements Infection {
 
 
 	public VirusWithoutLipid(Integer id, String name, String structure, String type, String introduction, String individual,
-			String link) {
+			String link, String link2) {
 		super(name, structure);
 		this.id = id;
 		this.type = type;
 		this.introduction = introduction;
 		this.individual = individual;
-		this.image = setImage(link);;
+		this.image = setImage(link);
+		this.image2 = setImage(link2);
 	}
 
 	// Getter and setter
@@ -73,6 +75,11 @@ public class VirusWithoutLipid extends Virus implements Infection {
 	public Image getImage() {
 		return image;
 	}
+	
+	public Image getImage2() {
+		return image2;
+	}
+	
 
 	// Nhap gioi thieu ve Virus
     void setIntroduction() {
@@ -91,7 +98,7 @@ public class VirusWithoutLipid extends Virus implements Infection {
     @Override
     public void infection() {
         // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'infection'");
+        System.out.println("VirusWithoutLipid đang nhiễm...");
     }
 
     //To String

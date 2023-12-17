@@ -45,7 +45,7 @@
    <bottom>
       <AnchorPane prefHeight="72.0" prefWidth="768.0" style="-fx-background-color: #080D19;" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="btnNext" layoutX="638.0" layoutY="19.0" mnemonicParsing="false" onAction="#changeSceneWithBtnNext" prefHeight="37.0" prefWidth="104.0" stylesheets="@Style/VirusWithLipitStyle.css" text="Next" />
+            <Button fx:id="btnNextButton" layoutX="638.0" layoutY="19.0" mnemonicParsing="false" onAction="#changeSceneWithBtnNext" prefHeight="37.0" prefWidth="104.0" stylesheets="@Style/VirusWithLipitStyle.css" text="Next" />
             <Button fx:id="btnHelp" layoutX="47.0" layoutY="10.0" mnemonicParsing="false" onAction="#changeSceneWithBtnHelp" prefHeight="35.0" prefWidth="105.0" stylesheets="@Style/VirusWithLipitStyle.css" text="Help" />
          </children>
       </AnchorPane>

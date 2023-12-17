@@ -8,33 +8,42 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 public class Page1Controller {
 
 	@FXML
+	private Button btnVirusWithLipit;
+
+	@FXML
+	private BorderPane page1Container;
+
+	@FXML
 	void changeSceneWithBtnVirusWithLipit(ActionEvent event) throws IOException {
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("VirusWithLipit.fxml"));
 		Parent root = loader.load();
+
 		Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		Scene scene = new Scene(root);
-		
-		scene.getStylesheets().add(getClass()
-	        		.getResource("Style/VirusWithLipitStyle.css").toExternalForm());
-		
+
+		scene.getStylesheets().add(getClass().getResource("Style/VirusWithLipitStyle.css").toExternalForm());
+
 		stage.setScene(scene);
 		stage.show();
 	}
 
 	@FXML
 	void changeSceneWithBtnVirusWithoutLipit(ActionEvent event) throws IOException {
+
 		Parent root = FXMLLoader.load(getClass().getResource("VirusWithoutLipit.fxml"));
+
 		Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		Scene scene = new Scene(root);
-		
-		scene.getStylesheets().add(getClass()
-        		.getResource("Style/VirusWithLipitStyle.css").toExternalForm());
-		
+
+		scene.getStylesheets().add(getClass().getResource("Style/VirusWithLipitStyle.css").toExternalForm());
+
 		stage.setScene(scene);
 		stage.show();
 	}
@@ -44,15 +53,14 @@ public class Page1Controller {
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("Help.fxml"));
 		Parent root = loader.load();
 		Scene scene = new Scene(root);
-		
-		scene.getStylesheets().add(getClass()
-        		.getResource("Style/HelpStyle.css").toExternalForm());
-		
+
+		scene.getStylesheets().add(getClass().getResource("Style/HelpStyle.css").toExternalForm());
+
 		Stage stage = new Stage();
-        stage.setTitle("Help");
-        stage.setScene(scene);
-        
-        stage.show();
+		stage.setTitle("Help");
+		stage.setScene(scene);
+
+		stage.show();
 	}
 
 }

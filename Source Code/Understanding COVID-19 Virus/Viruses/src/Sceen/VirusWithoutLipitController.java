@@ -7,6 +7,8 @@ import java.util.ResourceBundle;
 import Repository.Repository;
 import Virus.Virus;
 import Virus.VirusWithoutLipid;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -16,6 +18,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -23,7 +26,10 @@ import javafx.stage.Stage;
 
 public class VirusWithoutLipitController implements Initializable {
 	private Repository repo;
-
+	
+	@FXML
+	private Button btnNextButton;
+	
 	@FXML
 	private TableColumn<Virus, Integer> idColumn;
 
@@ -67,7 +73,8 @@ public class VirusWithoutLipitController implements Initializable {
 				+ "\n"
 				+ "sharing injection drug equipment.",
 				"Infection",
-				"Image/HIV.jpg");
+				"Image/HIV.jpg","Image/conDuongLayNhiemHiv.jpg");
+		
 		repo.addVirusToRepo(Hiv);
 
 		idColumn.setCellValueFactory(new PropertyValueFactory<Virus, Integer>("id"));
@@ -76,6 +83,18 @@ public class VirusWithoutLipitController implements Initializable {
 		typeColumn.setCellValueFactory(new PropertyValueFactory<Virus, String>("type"));
 		virusList = FXCollections.observableArrayList(repo.getListVirus());
 		table.setItems(virusList);
+		
+		
+		btnNextButton.setDisable(true);
+		
+		table.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Virus>() {
+			@Override
+            public void changed(ObservableValue<? extends Virus> observable, Virus oldValue, Virus newValue) {
+                // Bật hoặc vô hiệu hóa nút "Next" dựa trên việc có mục được chọn hay không
+                btnNextButton.setDisable(newValue == null);
+            }
+		});
+		
 	}
 
 	@FXML
@@ -105,23 +124,23 @@ public class VirusWithoutLipitController implements Initializable {
 	}
 
 	@FXML
-	void changeSceneWithBtnNext(ActionEvent event) throws IOException {
-		FXMLLoader loader = new FXMLLoader(getClass().getResource("Page3.fxml"));
-		Parent root = loader.load();
+    void changeSceneWithBtnNext(ActionEvent event) throws IOException {
+        // Kiểm tra xem có mục nào được chọn trước khi tiến hành
+        if (table.getSelectionModel().getSelectedItem() != null) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Page3.fxml"));
+            Parent root = loader.load();
 
-		// Truyền dữ liệu vào Page3Controller
-		Page3Controller page3Controller = loader.getController();
-		Virus selectedVirus = table.getSelectionModel().getSelectedItem();// lay du lieu tu thang duoc chon
-		page3Controller.setData(selectedVirus);// truyen du lie cua virus duoc chon sang page3controller
+            // Truyền dữ liệu vào Page3Controller
+            Page3Controller page3Controller = loader.getController();
+            Virus selectedVirus = table.getSelectionModel().getSelectedItem();
+            page3Controller.setData(selectedVirus);
 
-		Scene scene = new Scene(root);
-		
-		scene.getStylesheets().add(getClass()
-	        		.getResource("Style/Page3Style.css").toExternalForm());
-		 
-		Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-		stage.setScene(scene);
-		stage.show();
-	}
+            Scene scene = new Scene(root);
+            scene.getStylesheets().add(getClass().getResource("Style/Page3Style.css").toExternalForm());
 
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }
+    }
 }
