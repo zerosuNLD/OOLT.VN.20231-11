@@ -11,6 +11,7 @@
  
 }
 
+
 #btnBack:hover,#btnNext:hover
 {
 	-fx-background-color: #03e9f4;
@@ -30,14 +31,6 @@
 
 }
 
-
-#AnchorPaneCenter {
-	-fx-border-color: linear-gradient(from 0% 93% to 0% 100%,#a34313 0%,#903b12 100%),
-             #9d4024,
-             #d86e3a,
-            radial-gradient(center 50% 50%, radius 100%,#d96e3a,#c54e2c);
-	-fx-border-width: 5 0 0 0;
-}
 
 #btnHelp {
   	-fx-shape: "M 0,0 A 30,30 0 1,1 1,0 Z"; /* Định dạng hình tròn */
@@ -68,7 +61,7 @@
 }
 
 
-#infectionLabel{
+#individualLabel{
 	-fx-font-family: 'Ink Free';
 	-fx-text-fill: black;
     -fx-background-color:  #B0B0B0;
@@ -78,7 +71,13 @@
             dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
 }
 
-#title {
-	-fx-font-family: 'Kristen ITC';
-	
+
+
+#AnchorPaneCenter {
+	-fx-border-color: linear-gradient(from 0% 93% to 0% 100%,#a34313 0%,#903b12 100%),
+             #9d4024,
+             #d86e3a,
+            radial-gradient(center 50% 50%, radius 100%,#d96e3a,#c54e2c);
+	-fx-border-width: 5 0 0 0;
 }
+

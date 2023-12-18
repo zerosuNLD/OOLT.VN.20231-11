@@ -30,7 +30,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button fx:id="btnNext" layoutX="614.0" layoutY="355.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="124.0" stylesheets="@Style/infectionStyle.css" text="Next" />
+            <Button fx:id="btnNext" layoutX="614.0" layoutY="355.0" mnemonicParsing="false" onAction="#changeSceneWithbtnNext" prefHeight="37.0" prefWidth="124.0" stylesheets="@Style/infectionStyle.css" text="Next" />
             <Label alignment="CENTER" layoutX="108.0" layoutY="22.0" prefHeight="65.0" prefWidth="638.0" style="-fx-border-color: #03e9f4; -fx-border-width: 0 0 0 3;" stylesheets="@Style/infectionStyle.css" text="The basic mechanism of the virus with a lipid envelope in invading the host cell" textFill="#03e9f4">
                <font>
                   <Font name="Kristen ITC" size="15.0" />

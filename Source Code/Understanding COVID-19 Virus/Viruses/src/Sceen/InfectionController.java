@@ -30,7 +30,7 @@ public class InfectionController{
 	public void setData(Virus virus) {
 		if (virus != null) {
 	        title.setText(virus.getName());
-	        virus.infection();
+	        virus.infection(); 	
 
 	        if (virus instanceof VirusWithLipid) {
 	            VirusWithLipid vsLipid = (VirusWithLipid) virus;
@@ -41,6 +41,17 @@ public class InfectionController{
 	                System.err.println("Lỗi: imageView là null");
 	            }
 
+	            infectionLabel.setText(
+	            		"● Viruses with envelopes usually have anchors, called "
+	            		+ "\n"
+	            		+ "glycoprotein. The mechanism for infecting, in this case, "
+	            		+ "\n"
+	            		+ " is by lock–key: when reaching the host cell with the"
+	            		+ "\n"
+	            		+ " suitable outer structure, it uses its glycoproteins to"
+	            		+ "\n"
+	            		+ " attach, then injects its acid nucleic into the cell ");
+	            
 	        } else if (virus instanceof VirusWithoutLipid) {
 	            VirusWithoutLipid vsWithoutLipid = (VirusWithoutLipid) virus;
 
@@ -49,6 +60,11 @@ public class InfectionController{
 	            } else {
 	                System.err.println("Lỗi: imageView là null");
 	            }
+
+	            infectionLabel.setText("● Virus without the envelope will dissolve its capsid"
+	            		+ "\n"
+	            		+ " when reaching the target cell ");
+
 	        }
 	    } else {
 	        System.err.println("Virus là null");
@@ -94,6 +110,36 @@ public class InfectionController{
 		stage.setTitle("Help");
 		stage.setScene(scene);
 
+		stage.show();
+	}
+	
+
+	@FXML
+	void changeSceneWithbtnNext(ActionEvent event) throws IOException {
+		if (virus == null) {
+	        System.out.println("Virus = null");
+	        return;
+	    }
+				
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("individual.fxml"));
+		Parent root = loader.load();
+
+		individualController controller = loader.getController();
+		
+	    if (controller != null) {
+	        controller.setData(virus);
+	    } else {
+	        System.out.println("Infection controller is null");
+	    }
+	    
+		Scene scene = new Scene(root);
+		Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+		
+		
+		scene.getStylesheets().add(getClass().getResource("Style/individualStyle.css").toExternalForm());
+
+
+		stage.setScene(scene);
 		stage.show();
 	}
 

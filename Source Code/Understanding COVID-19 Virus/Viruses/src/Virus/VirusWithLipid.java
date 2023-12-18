@@ -2,6 +2,10 @@ package Virus;
 
 import java.util.Scanner;
 
+import javax.swing.JDialog;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
 import javafx.scene.image.Image;
 
 public class VirusWithLipid extends Virus implements Infection {
@@ -103,9 +107,21 @@ public class VirusWithLipid extends Virus implements Infection {
     // Interface
     @Override
     public void infection() {
-    	
-        // TODO Auto-generated method stub
-        System.out.println("VirusWithoutLipid đang nhiễm...");
+    	JFrame frame = new JFrame();
+        JDialog dialog = new JDialog(frame);
+
+        JLabel p1 = new JLabel("");
+        p1.setText("VirusWithoutLipid đang nhiễm...");
+
+        dialog.add(p1);
+
+        dialog.setSize(300, 100); // Đặt kích thước của cửa sổ dialog
+        dialog.setLocationRelativeTo(frame); // Hiển thị dialog giữa cửa sổ chính
+        dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE); // Đóng dialog khi nhấn nút đóng
+
+        dialog.setVisible(true);
+        
+        System.out.println("VirusWithLipid đang nhiễm...");
     }
 
     // To String
