@@ -2,15 +2,14 @@ package Virus;
 
 import java.util.Scanner;
 
-import javafx.scene.image.Image;
-
 public class VirusWithoutLipid extends Virus implements Infection {
     private int id;
     private String type;
     private String introduction;
     private String individual;
-    private Image image;
-    private Image image2;
+    private String imageLink;
+    private String image2Link;
+    private String linkVideoString;
     
 //    private static int nbId = 0;
 
@@ -31,18 +30,19 @@ public class VirusWithoutLipid extends Virus implements Infection {
 
 
 	public VirusWithoutLipid(Integer id, String name, String structure, String type, String introduction, String individual,
-			String link, String link2) {
+			String link, String link2, String linkVideo) {
 		super(name, structure);
 		this.id = id;
 		this.type = type;
 		this.introduction = introduction;
 		this.individual = individual;
-		this.image = setImage(link);
-		this.image2 = setImage(link2);
+		this.imageLink = link;
+		this.image2Link = link2;
+		this.linkVideoString = linkVideo;
 	}
 
 	// Getter and setter
-    public int getId() {
+    public int getID() {
         return id;
     }
 
@@ -67,19 +67,36 @@ public class VirusWithoutLipid extends Virus implements Infection {
 		this.type = type;
 	}
 
-	public Image setImage(String string) {
-		return new Image(getClass().getResourceAsStream(string));
-		
+
+	public String getLinkVideoString() {
+		return linkVideoString;
 	}
 
-	public Image getImage() {
-		return image;
+
+	public void setLinkVideoString(String linkVideoString) {
+		this.linkVideoString = linkVideoString;
 	}
-	
-	public Image getImage2() {
-		return image2;
+
+
+	public String getImageLink() {
+		return imageLink;
 	}
-	
+
+
+	public void setImageLink(String imageLink) {
+		this.imageLink = imageLink;
+	}
+
+
+	public String getImage2Link() {
+		return image2Link;
+	}
+
+
+	public void setImage2Link(String image2Link) {
+		this.image2Link = image2Link;
+	}
+
 
 	// Nhap gioi thieu ve Virus
     void setIntroduction() {

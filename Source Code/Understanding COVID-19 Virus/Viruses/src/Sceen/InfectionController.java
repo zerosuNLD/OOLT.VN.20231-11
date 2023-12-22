@@ -1,6 +1,8 @@
 package Sceen;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 import Virus.Virus;
 import Virus.VirusWithLipid;
@@ -8,136 +10,107 @@ import Virus.VirusWithoutLipid;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
-public class InfectionController{
+public class InfectionController implements Initializable {
 	@FXML
 	private ImageView imageView;
-	
-    @FXML
-    private Label title;
-	
-    @FXML
-    private Label infectionLabel;
-    
+
+	@FXML
+	private Label title;
+
+	@FXML
+	private Label infectionLabel;
+
 	private Virus virus;
 
 	public void setData(Virus virus) {
-		if (virus != null) {
-	        title.setText(virus.getName());
-	        virus.infection(); 	
-
-	        if (virus instanceof VirusWithLipid) {
-	            VirusWithLipid vsLipid = (VirusWithLipid) virus;
-
-	            if (imageView != null) {
-	                imageView.setImage(vsLipid.getImage2());
-	            } else {
-	                System.err.println("Lỗi: imageView là null");
-	            }
-
-	            infectionLabel.setText(
-	            		"● Viruses with envelopes usually have anchors, called "
-	            		+ "\n"
-	            		+ "glycoprotein. The mechanism for infecting, in this case, "
-	            		+ "\n"
-	            		+ " is by lock–key: when reaching the host cell with the"
-	            		+ "\n"
-	            		+ " suitable outer structure, it uses its glycoproteins to"
-	            		+ "\n"
-	            		+ " attach, then injects its acid nucleic into the cell ");
-	            
-	        } else if (virus instanceof VirusWithoutLipid) {
-	            VirusWithoutLipid vsWithoutLipid = (VirusWithoutLipid) virus;
-
-	            if (imageView != null) {
-	                imageView.setImage(vsWithoutLipid.getImage2());
-	            } else {
-	                System.err.println("Lỗi: imageView là null");
-	            }
-
-	            infectionLabel.setText("● Virus without the envelope will dissolve its capsid"
-	            		+ "\n"
-	            		+ " when reaching the target cell ");
-
-	        }
-	    } else {
-	        System.err.println("Virus là null");
-	    }
-		
-	    this.virus = virus;
+		this.virus = virus;
 	}
 
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		title.setText(virus.getName());
+		if (virus instanceof VirusWithLipid) {
+			VirusWithLipid vsLipid = (VirusWithLipid) virus;
+			String linkImage2 = vsLipid.getImage2Link();
+			// chuyen link image thanh image
+			Image image = new Image(getClass().getResourceAsStream(linkImage2));
+			
+			//truyen image vao imageView
+			imageView.setImage(image);
+			
+			//truyen infection vao infectionLabel
+			infectionLabel.setText("Infection Of Virus with Lipit");
 
-	
+		} else if (virus instanceof VirusWithoutLipid) {
+			VirusWithoutLipid vsWithoutLipid = (VirusWithoutLipid) virus;
+			String linkImage2 = vsWithoutLipid.getImage2Link();
+			// chuyen link image thanh image
+			Image image = new Image(getClass().getResourceAsStream(linkImage2));
+			
+			imageView.setImage(image);
+			
+			infectionLabel.setText("Infecton Of Virus without Lipit");
+
+		}
+	}
+
 	@FXML
 	void changeSceneWithBackPage3(ActionEvent event) throws IOException {
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("Page3.fxml"));
+		
+		Page3Controller page3Controller = new Page3Controller();
+		page3Controller.setData(virus);
+		loader.setController(page3Controller);
+		
 		Parent root = loader.load();
 
 		Scene scene = new Scene(root);
 		Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-		Page3Controller page3Controller = loader.getController();
-		if (page3Controller != null) {
-	        page3Controller.setData(this.virus);
-	    } else {
-	        System.out.println("Page3 controller is null");
-	    }
-	    
-
 		scene.getStylesheets().add(getClass().getResource("Style/Page3Style.css").toExternalForm());
 		stage.setScene(scene);
 		stage.show();
 	}
-	
+
 	@FXML
 	void changeSceneWithBtnHelp(ActionEvent event) throws IOException {
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("Help.fxml"));
 		Parent root = loader.load();
 		Scene scene = new Scene(root);
 
-		scene.getStylesheets().add(getClass()
-        		.getResource("Style/HelpStyle.css").toExternalForm());
-		
-		
+		scene.getStylesheets().add(getClass().getResource("Style/HelpStyle.css").toExternalForm());
+
 		Stage stage = new Stage();
 		stage.setTitle("Help");
 		stage.setScene(scene);
 
 		stage.show();
 	}
-	
 
 	@FXML
 	void changeSceneWithbtnNext(ActionEvent event) throws IOException {
-		if (virus == null) {
-	        System.out.println("Virus = null");
-	        return;
-	    }
-				
+	
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("individual.fxml"));
-		Parent root = loader.load();
-
-		individualController controller = loader.getController();
 		
-	    if (controller != null) {
-	        controller.setData(virus);
-	    } else {
-	        System.out.println("Infection controller is null");
-	    }
-	    
+		//Truyen Data
+		individualController individualController = new individualController();
+		individualController.setData(virus);
+		loader.setController(individualController);
+		
+		Parent root = loader.load();
 		Scene scene = new Scene(root);
 		Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-		
-		
-		scene.getStylesheets().add(getClass().getResource("Style/individualStyle.css").toExternalForm());
 
+		scene.getStylesheets().add(getClass().getResource("Style/individualStyle.css").toExternalForm());
 
 		stage.setScene(scene);
 		stage.show();

@@ -6,7 +6,6 @@ import java.util.ResourceBundle;
 
 import Repository.Repository;
 import Virus.Virus;
-import Virus.VirusWithLipid;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -26,6 +25,10 @@ import javafx.stage.Stage;
 
 public class VirusWithLipitController implements Initializable {
 	private Repository repo;
+	
+	public void setData(Repository repository) {
+		this.repo = repository;	
+	}
 
 	@FXML
 	private Button btnNextButton;
@@ -45,11 +48,7 @@ public class VirusWithLipitController implements Initializable {
 	@FXML
 	private TableColumn<Virus, String> typeColumn;
 
-	VirusWithLipid covid = new VirusWithLipid(001, "COVID-19", "Nucleic Acid + Capsid", "Virus With Lipit",
-			"introduction", "individual", "Image/covid.jpg","Image/conDuongLayNhiemHiv.jpg");
-	VirusWithLipid rotavirus = new VirusWithLipid(002, "Rotaviruses", "Nucleic Acid + Capsid", "Virus With Lipit",
-			"introduction", "individual", "Image/rotaviruses.jpg","Image/conDuongLayNhiemHiv.jpg");
-
+	
 	public VirusWithLipitController() {
 		this.repo = new Repository();
 	}
@@ -63,8 +62,7 @@ public class VirusWithLipitController implements Initializable {
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		repo.addVirusToRepo(covid, rotavirus);
-		idColumn.setCellValueFactory(new PropertyValueFactory<Virus, Integer>("id"));
+		idColumn.setCellValueFactory(new PropertyValueFactory<Virus, Integer>("ID"));
 		nameColumn.setCellValueFactory(new PropertyValueFactory<Virus, String>("name"));
 		structureColumn.setCellValueFactory(new PropertyValueFactory<Virus, String>("structure"));
 		typeColumn.setCellValueFactory(new PropertyValueFactory<Virus, String>("type"));
@@ -84,11 +82,21 @@ public class VirusWithLipitController implements Initializable {
 
 	@FXML
 	void changeSceneWithBackPage1(ActionEvent event) throws IOException {
-		Parent root = FXMLLoader.load(getClass().getResource("Page1.fxml"));
+		//Loader la load file Page1.fxml
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("Page1.fxml"));
+		
+		//Set controller
+		Page1Controller page1Controller = new Page1Controller();
+		loader.setController(page1Controller);
+		
+		Parent root = loader.load();
 		Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		Scene scene = new Scene(root);
+		scene.getStylesheets().add(getClass().getResource("Style/Page1Style.css").toExternalForm());
 		stage.setScene(scene);
+
 		stage.show();
+
 	}
 
 	@FXML
@@ -108,22 +116,32 @@ public class VirusWithLipitController implements Initializable {
 
 	@FXML
 	void changeSceneWithBtnNext(ActionEvent event) throws IOException {
-		if (table.getSelectionModel().getSelectedItem() != null) {
+	    if (table.getSelectionModel().getSelectedItem() != null) {
 
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("Page3.fxml"));
-			Parent root = loader.load();
+	        // Load Page3
+	        FXMLLoader loader = new FXMLLoader(getClass().getResource("Page3.fxml"));
+	        
+	        // Lấy controller đã tạo bởi FXMLLoader
+	        Page3Controller page3Controller = new Page3Controller();
+	        
+	        // Truyền dữ liệu sang cho page3
+	        page3Controller.setData(table.getSelectionModel().getSelectedItem());
 
-			// Truyền dữ liệu vào Page3Controller
-			Page3Controller page3Controller = loader.getController();
-			Virus selectedVirus = table.getSelectionModel().getSelectedItem();// lay du lieu tu thang duoc chon
-			page3Controller.setData(selectedVirus);// truyen du lie cua virus duoc chon sang page3controller
+	        loader.setController(page3Controller);
 
-			Scene scene = new Scene(root);
-			Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+	        // Load controller từ FXMLLoader (không tạo mới)
+	        Parent root = loader.load();
+	        
+	        
+	        Scene scene = new Scene(root);
+	        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-			scene.getStylesheets().add(getClass().getResource("Style/Page3Style.css").toExternalForm());
-			stage.setScene(scene);
-			stage.show();
-		}
+	        // Style css
+	        scene.getStylesheets().add(getClass().getResource("Style/Page3Style.css").toExternalForm());
+
+	        stage.setScene(scene);
+	        stage.show();
+	    }
 	}
+
 }

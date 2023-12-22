@@ -6,7 +6,6 @@ import java.util.ResourceBundle;
 
 import Repository.Repository;
 import Virus.Virus;
-import Virus.VirusWithoutLipid;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -26,10 +25,15 @@ import javafx.stage.Stage;
 
 public class VirusWithoutLipitController implements Initializable {
 	private Repository repo;
-	
+
+	public void setData(Repository repository) {
+		this.repo = repository;
+		repository.showListVirus();
+	}
+
 	@FXML
 	private Button btnNextButton;
-	
+
 	@FXML
 	private TableColumn<Virus, Integer> idColumn;
 
@@ -58,51 +62,41 @@ public class VirusWithoutLipitController implements Initializable {
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		VirusWithoutLipid Hiv = new VirusWithoutLipid(001, "HIV", "Nucleic Acid + Capsid", "Virus Without Lipit",
-				"HIV (human immunodeficiency virus) is a virus that attacks "
-				+ "\n"
-				+"cells that help the body fight infection, making a person "
-				+ "\n"
-				+"more vulnerable to other infections and diseases. It is spread"
-				+ "\n"
-				+ " by contact with certain bodily fluids of a person with HIV, "
-				+ "\n"
-				+ "most commonly during unprotected sex (sex without a condom "
-				+ "\n"
-				+	"or HIV medicine to prevent or treat HIV), or through "
-				+ "\n"
-				+ "sharing injection drug equipment.",
-				"Infection",
-				"Image/HIV.jpg","Image/conDuongLayNhiemHiv.jpg");
-		
-		repo.addVirusToRepo(Hiv);
 
-		idColumn.setCellValueFactory(new PropertyValueFactory<Virus, Integer>("id"));
+		idColumn.setCellValueFactory(new PropertyValueFactory<Virus, Integer>("ID"));
 		nameColumn.setCellValueFactory(new PropertyValueFactory<Virus, String>("name"));
 		structureColumn.setCellValueFactory(new PropertyValueFactory<Virus, String>("structure"));
 		typeColumn.setCellValueFactory(new PropertyValueFactory<Virus, String>("type"));
 		virusList = FXCollections.observableArrayList(repo.getListVirus());
 		table.setItems(virusList);
-		
-		
+
 		btnNextButton.setDisable(true);
-		
+
 		table.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Virus>() {
 			@Override
-            public void changed(ObservableValue<? extends Virus> observable, Virus oldValue, Virus newValue) {
-                // Bật hoặc vô hiệu hóa nút "Next" dựa trên việc có mục được chọn hay không
-                btnNextButton.setDisable(newValue == null);
-            }
+			public void changed(ObservableValue<? extends Virus> observable, Virus oldValue, Virus newValue) {
+				// Bật hoặc vô hiệu hóa nút "Next" dựa trên việc có mục được chọn hay không
+				btnNextButton.setDisable(newValue == null);
+			}
 		});
-		
+
 	}
 
 	@FXML
 	void changeSceneWithBackPage1(ActionEvent event) throws IOException {
-		Parent root = FXMLLoader.load(getClass().getResource("Page1.fxml"));
+		// Loader la load file Page1.fxml
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("Page1.fxml"));
+		
+		Page1Controller page1Controller = new Page1Controller();
+		loader.setController(page1Controller);
+		
+		Parent root = loader.load();
+		
 		Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		Scene scene = new Scene(root);
+		scene.getStylesheets().add(getClass().getResource("Style/Page1Style.css").toExternalForm());
 		stage.setScene(scene);
+
 		stage.show();
 	}
 
@@ -112,10 +106,8 @@ public class VirusWithoutLipitController implements Initializable {
 		Parent root = loader.load();
 		Scene scene = new Scene(root);
 
-		scene.getStylesheets().add(getClass()
-        		.getResource("Style/HelpStyle.css").toExternalForm());
-		
-		
+		scene.getStylesheets().add(getClass().getResource("Style/HelpStyle.css").toExternalForm());
+
 		Stage stage = new Stage();
 		stage.setTitle("Help");
 		stage.setScene(scene);
@@ -124,23 +116,26 @@ public class VirusWithoutLipitController implements Initializable {
 	}
 
 	@FXML
-    void changeSceneWithBtnNext(ActionEvent event) throws IOException {
-        // Kiểm tra xem có mục nào được chọn trước khi tiến hành
-        if (table.getSelectionModel().getSelectedItem() != null) {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Page3.fxml"));
-            Parent root = loader.load();
+	void changeSceneWithBtnNext(ActionEvent event) throws IOException {
+	    if (table.getSelectionModel().getSelectedItem() != null) {
 
-            // Truyền dữ liệu vào Page3Controller
-            Page3Controller page3Controller = loader.getController();
-            Virus selectedVirus = table.getSelectionModel().getSelectedItem();
-            page3Controller.setData(selectedVirus);
+	        // Load Page3
+	        FXMLLoader loader = new FXMLLoader(getClass().getResource("Page3.fxml"));
+	        
+	        // Lấy controller đã tạo bởi FXMLLoader
+	        Page3Controller page3Controller = new Page3Controller();
+	        page3Controller.setData(table.getSelectionModel().getSelectedItem());
+	        loader.setController(page3Controller);
+	        
+	        Parent root = loader.load();
+	        Scene scene = new Scene(root);
+	        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-            Scene scene = new Scene(root);
-            scene.getStylesheets().add(getClass().getResource("Style/Page3Style.css").toExternalForm());
+	        // Style css
+	        scene.getStylesheets().add(getClass().getResource("Style/Page3Style.css").toExternalForm());
 
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(scene);
-            stage.show();
-        }
-    }
+	        stage.setScene(scene);
+	        stage.show();
+	    }
+	}
 }

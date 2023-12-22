@@ -1,6 +1,6 @@
 package Virus;
 
-public class Virus implements Infection{
+public abstract class Virus implements Infection {
     protected String name;
     protected String structure;
 
@@ -25,11 +25,25 @@ public class Virus implements Infection{
         this.structure = structure;
     }
 
+    public abstract int getID();
+
+    public abstract String getType();
+
+    public abstract String getIntroduction();
+
+    public abstract String getIndividual();
+
+    public abstract String getImageLink();
+
+    public abstract String getImage2Link();
+    
+    public abstract String getLinkVideoString();
+
+	public abstract void setLinkVideoString(String linkVideoString);
+
+
     @Override
     public void infection() {
-        // TODO Auto-generated method stub
-        
+        // TODO Phương thức này có thể được triển khai trong các lớp con cụ thể.
     }
-	
-
 }

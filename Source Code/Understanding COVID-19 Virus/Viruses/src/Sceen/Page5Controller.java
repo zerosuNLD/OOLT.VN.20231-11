@@ -37,13 +37,7 @@ public class Page5Controller implements Initializable{
 	
 	private Virus virus;
 	
-	public void setData(Virus virus) {
-		if (virus != null) {
-			title.setText("Video the process of virus " + virus.getName() + " infection into the human body");
-	    } else {
-	        System.err.println("Virus là null");
-	    }
-		
+	public void setData(Virus virus) {		
 	    this.virus = virus;
 	}
 
@@ -51,8 +45,10 @@ public class Page5Controller implements Initializable{
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		
-		file = new File("C:/Users/Admin/eclipse-workspace/MediaVIew/src/1.mp4");
+		title.setText("Video the process of virus " + virus.getName() + " infection into the human body");
+		String linkVideoString = virus.getLinkVideoString();
+		System.out.println(linkVideoString);
+		file = new File(linkVideoString);
 		media = new Media(file.toURI().toString());
 		mediaPlayer = new MediaPlayer(media);
 		mediaView.setMediaPlayer(mediaPlayer);
@@ -84,20 +80,19 @@ public class Page5Controller implements Initializable{
 	@FXML
 	void changeSceneWithBack(ActionEvent event) throws IOException {
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("individual.fxml"));
+		
+		individualController individualController = new individualController();
+		individualController.setData(virus);
+		
+		loader.setController(individualController);
+		
+		pauseMedia(event);
+		
 		Parent root = loader.load();
 
 		Scene scene = new Scene(root);
 		Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-		individualController individualController = loader.getController();
-		if (individualController != null) {
-	        individualController.setData(this.virus);
-	    } else {
-	        System.out.println("Page3 controller is null");
-	    }
 		
-		pauseMedia(event);
-
 		scene.getStylesheets().add(getClass().getResource("Style/individualStyle.css").toExternalForm());
 		stage.setScene(scene);
 		stage.show();

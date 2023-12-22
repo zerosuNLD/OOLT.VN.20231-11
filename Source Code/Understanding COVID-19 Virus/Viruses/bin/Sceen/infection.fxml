@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="512.0" prefWidth="768.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Sceen.InfectionController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="512.0" prefWidth="768.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <top>
       <AnchorPane prefHeight="99.0" prefWidth="768.0" style="-fx-background-color: #080D19;" BorderPane.alignment="CENTER">
          <children>
@@ -39,7 +39,7 @@
             <Button fx:id="btnHelp" layoutX="27.0" layoutY="32.0" mnemonicParsing="false" onAction="#changeSceneWithBtnHelp" stylesheets="@Style/infectionStyle.css" text="Help" />
             <ImageView fx:id="imageView" fitHeight="185.0" fitWidth="377.0" layoutX="493.0" layoutY="159.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Virus/Image/conDuongLayNhiemHiv.jpg" />
+                  <Image url="@Image/conDuongLayNhiemHiv.jpg" />
                </image></ImageView>
             <Label layoutX="495.0" layoutY="107.0" prefHeight="37.0" prefWidth="248.0" style="-fx-border-color: #03e9f4; -fx-border-width: 3 3 0 0;" text="Transmission pathways of the virus" textFill="#03e9f4">
                <padding>
