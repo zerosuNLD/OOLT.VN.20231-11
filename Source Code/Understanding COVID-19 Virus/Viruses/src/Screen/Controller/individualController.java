@@ -4,7 +4,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import Model.Model;
-import Virus.Virus;
+import Virus.GUI_Virus;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -37,11 +37,11 @@ public class individualController implements Initializable {
 	@FXML
 	private Button close_btn;
 	
-	private Virus virus;
+	private GUI_Virus gUI_Virus;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		virus = Model.getInstance().getViewFactory().getVirusSelected();
+		gUI_Virus = Model.getInstance().getViewFactory().getVirusSelected();
 
 		setDataOnScene();
 
@@ -52,9 +52,9 @@ public class individualController implements Initializable {
 	}
 
 	private void setDataOnScene() {
-		name.setText(virus.getName());
-		title.setText("The distinct transmission of the virus " + virus.getName());
-		individualLabel.setText(virus.getIndividual());
+		name.setText(gUI_Virus.getName());
+		title.setText("The distinct transmission of the virus " + gUI_Virus.getName());
+		individualLabel.setText(gUI_Virus.getIndividual());
 		individualLabel.setWrapText(true);  
 	    individualLabel.setMaxWidth(610);  
 	}

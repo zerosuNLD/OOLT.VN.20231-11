@@ -36,16 +36,16 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button fx:id="btnNext" layoutX="614.0" layoutY="355.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="124.0" text="Next" />
-            <Label alignment="CENTER" layoutX="108.0" layoutY="22.0" prefHeight="65.0" prefWidth="638.0" style="-fx-border-color: #03e9f4; -fx-border-width: 0 0 0 3;" stylesheets="@../Style/infectionStyle.css" text="The basic mechanism of the virus with a lipid envelope in invading the host cell" textFill="#03e9f4">
+            <Button fx:id="btnNext" layoutX="598.0" layoutY="355.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="140.0" text="Next" />
+            <Label layoutX="108.0" layoutY="22.0" prefHeight="65.0" prefWidth="638.0" style="-fx-border-color: #03e9f4; -fx-border-width: 0 0 0 3;" stylesheets="@../Style/infectionStyle.css" text="    The detailed structure of the virus" textFill="#03e9f4">
                <font>
                   <Font name="Kristen ITC" size="15.0" />
                </font>
             </Label>
             <Button fx:id="btnHelp" layoutX="27.0" layoutY="32.0" mnemonicParsing="false" stylesheets="@../Style/infectionStyle.css" text="Help" />
-            <ImageView fx:id="imageView" fitHeight="185.0" fitWidth="377.0" layoutX="493.0" layoutY="159.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imageView" fitHeight="170.0" fitWidth="285.0" layoutX="494.0" layoutY="172.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Image/conDuongLayNhiemHiv.jpg" />
+                  <Image url="@../Image/rhinovirus_LifeCycle.jpg" />
                </image></ImageView>
             <Label layoutX="495.0" layoutY="107.0" prefHeight="37.0" prefWidth="248.0" style="-fx-border-color: #03e9f4; -fx-border-width: 3 3 0 0;" text="Transmission pathways of the virus" textFill="#03e9f4">
                <padding>

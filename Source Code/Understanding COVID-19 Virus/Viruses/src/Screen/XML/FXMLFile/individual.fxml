@@ -31,7 +31,10 @@
          <children>
             <Button fx:id="btnHelp" layoutX="41.0" layoutY="19.0" mnemonicParsing="false" stylesheets="@../Style/individualStyle.css" text="Help" />
             <Button fx:id="btnNext" layoutX="294.0" layoutY="359.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="458.0" style="-fx-border-width: 3 0 0 0;" stylesheets="@../Style/infectionStyle.css" text="View video the process of virus infection into the human body" />
-            <Label fx:id="individualLabel" alignment="CENTER" layoutX="65.0" layoutY="86.0" prefHeight="260.0" prefWidth="624.0" stylesheets="@../Style/individualStyle.css" text="Individual of virus" />
+            <Label fx:id="individualLabel" alignment="CENTER" layoutX="65.0" layoutY="86.0" prefHeight="260.0" prefWidth="624.0" stylesheets="@../Style/individualStyle.css" text="Individual of virus">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
             <Label fx:id="title" layoutX="127.0" layoutY="18.0" prefHeight="49.0" prefWidth="514.0" style="-fx-border-color: #03e9f4; -fx-border-width: 0 0 0 3;" text="The distinct transmission of the virus" textFill="#03e9f4">
                <font>
                   <Font name="Kristen ITC" size="15.0" />

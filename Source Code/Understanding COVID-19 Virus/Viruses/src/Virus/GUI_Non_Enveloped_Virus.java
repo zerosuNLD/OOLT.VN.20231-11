@@ -2,15 +2,11 @@ package Virus;
 
 import java.util.Scanner;
 
-import javax.swing.JDialog;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-
-public class VirusWithLipid extends Virus implements Infection {
-	
+public class GUI_Non_Enveloped_Virus extends GUI_Virus implements Infection {
     private int id;
     private String type;
     private String introduction;
+    private String infectionString;
     private String individual;
     private String imageLink;
     private String image2Link;
@@ -19,27 +15,28 @@ public class VirusWithLipid extends Virus implements Infection {
 //    private static int nbId = 0;
 
     // Constructors
-    public VirusWithLipid(Integer id, String name, String structure) {
+    public GUI_Non_Enveloped_Virus(int id,String name, String structure) {
         super(name, structure);
-//        id = nbId++;
+//        this.id = nbId++;
         this.id = id;
     }
-    
 
-    public VirusWithLipid(Integer id, String name, String structure, String type) {
+
+    public GUI_Non_Enveloped_Virus(Integer id, String name, String structure, String type) {
 		super(name, structure);
 		this.type = type;
-//        id = nbId++;
+//        this.id = nbId++;
 		this.id = id;
 	}
 
-    
-	public VirusWithLipid(Integer id, String name, String structure, String type, String introduction, String individual,
-			String link, String link2,String linkVideo) {
+
+	public GUI_Non_Enveloped_Virus(Integer id, String name, String structure, String type, String introduction, String infectionString,String individual,
+			String link, String link2, String linkVideo) {
 		super(name, structure);
 		this.id = id;
 		this.type = type;
 		this.introduction = introduction;
+		this.setInfectionString(infectionString);
 		this.individual = individual;
 		this.imageLink = link;
 		this.image2Link = link2;
@@ -47,25 +44,23 @@ public class VirusWithLipid extends Virus implements Infection {
 	}
 
 	// Getter and setter
-	
-	
-	public int getID() {
-	        return id;
-	}
+    public int getID() {
+        return id;
+    }
 
     public String getIntroduction() {
         return introduction;
-    }
-
-    public void setIndividual(String individual) {
-        this.individual = individual;
     }
 
     public String getIndividual() {
         return individual;
     }
 
+    public void setIndividual(String individual) {
+        this.individual = individual;
+    }
     
+
     public String getType() {
 		return type;
 	}
@@ -74,10 +69,6 @@ public class VirusWithLipid extends Virus implements Infection {
 		this.type = type;
 	}
 
-
-	public String getImageLink() {
-		return imageLink;
-	}
 
 	public String getLinkVideoString() {
 		return linkVideoString;
@@ -89,10 +80,14 @@ public class VirusWithLipid extends Virus implements Infection {
 	}
 
 
+	public String getImageLink() {
+		return imageLink;
+	}
+
+
 	public void setImageLink(String imageLink) {
 		this.imageLink = imageLink;
 	}
-
 
 
 	public String getImage2Link() {
@@ -100,14 +95,11 @@ public class VirusWithLipid extends Virus implements Infection {
 	}
 
 
-
 	public void setImage2Link(String image2Link) {
 		this.image2Link = image2Link;
 	}
 
 
-
-	
 	// Nhap gioi thieu ve Virus
     void setIntroduction() {
         String intro = "";
@@ -124,29 +116,25 @@ public class VirusWithLipid extends Virus implements Infection {
     // Interface
     @Override
     public void infection() {
-    	JFrame frame = new JFrame();
-        JDialog dialog = new JDialog(frame);
-
-        JLabel p1 = new JLabel("");
-        p1.setText("VirusWithoutLipid đang nhiễm...");
-
-        dialog.add(p1);
-
-        dialog.setSize(300, 100); // Đặt kích thước của cửa sổ dialog
-        dialog.setLocationRelativeTo(frame); // Hiển thị dialog giữa cửa sổ chính
-        dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE); // Đóng dialog khi nhấn nút đóng
-
-        dialog.setVisible(true);
-        
-        System.out.println("VirusWithLipid đang nhiễm...");
+        // TODO Auto-generated method stub
+        System.out.println("VirusWithoutLipid đang nhiễm...");
     }
 
-    // To String
+    //To String
+
     @Override
     public String toString() {
-        return "VirusWithLipid [id=" + id + ", name=" + name + ", structure=" + structure + "]";
+        return "VirusWithoutLipid [id=" + id + ", name=" + name + ", structure=" + structure + "]";
     }
 
 
+	public String getInfectionString() {
+		return infectionString;
+	}
+
+
+	public void setInfectionString(String infectionString) {
+		this.infectionString = infectionString;
+	}
 
 }

@@ -1,20 +1,20 @@
 package Repository;
 
-import Virus.Virus;
+import Virus.GUI_Virus;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 public class Repository {
-	private ObservableList<Virus> listVirus = FXCollections.observableArrayList();
+	private ObservableList<GUI_Virus> listVirus = FXCollections.observableArrayList();
 
 	// Method
 	public void showListVirus() {
-		for (Virus virus : listVirus) {
-			System.out.println(virus.toString());
+		for (GUI_Virus gUI_Virus : listVirus) {
+			System.out.println(gUI_Virus.toString());
 		}
 	}
 
-	public void addVirusToRepo(Virus newVirus) {
+	public void addVirusToRepo(GUI_Virus newVirus) {
 
 		if (!listVirus.contains(newVirus)) {
 			listVirus.add(newVirus);
@@ -24,13 +24,13 @@ public class Repository {
 		}
 	}
 
-	public void addVirusToRepo(Virus... newVirus) {
-		for (Virus virus : newVirus) {
-			addVirusToRepo(virus);
+	public void addVirusToRepo(GUI_Virus... newVirus) {
+		for (GUI_Virus gUI_Virus : newVirus) {
+			addVirusToRepo(gUI_Virus);
 		}
 	}
 
-	public void removeVirusFromRepo(Virus virusToRemove) {
+	public void removeVirusFromRepo(GUI_Virus virusToRemove) {
 		if (listVirus.contains(virusToRemove)) {
 			listVirus.remove(virusToRemove);
 			System.out.println("Virus removed successfully!");
@@ -39,13 +39,13 @@ public class Repository {
 		}
 	}
 
-	public void removeVirusFromRepo(Virus... virusToRemove) {
-		for (Virus virus : virusToRemove) {
-			removeVirusFromRepo(virus);
+	public void removeVirusFromRepo(GUI_Virus... virusToRemove) {
+		for (GUI_Virus gUI_Virus : virusToRemove) {
+			removeVirusFromRepo(gUI_Virus);
 		}
 	}
 
-	public ObservableList<Virus> getListVirus() {
+	public ObservableList<GUI_Virus> getListVirus() {
 		return listVirus;
 	}
 	

@@ -5,7 +5,9 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Screen.Controller.HelpController">
    <top>
@@ -27,11 +29,24 @@
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #B0B0B0;" BorderPane.alignment="CENTER">
          <children>
-            <Label alignment="CENTER" layoutX="64.0" layoutY="41.0" prefHeight="212.0" prefWidth="477.0" text="Noi dung help">
+            <Label fx:id="helpLabel" alignment="TOP_CENTER" layoutX="24.0" layoutY="10.0" prefHeight="92.0" prefWidth="562.0" text="This program helps us understand more about various types of viruses and how they spread within our human bodies" AnchorPane.bottomAnchor="218.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="10.0">
                <font>
                   <Font name="Ink Free" size="20.0" />
                </font>
             </Label>
+            <Label layoutX="147.0" layoutY="139.0" prefHeight="44.0" prefWidth="190.0" text="Nhấn Help để xem hướng dẫn" />
+            <Button fx:id="btnHelp" layoutX="54.0" layoutY="135.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="127.0" style="-fx-text-fill: red; -fx-border-color: red;" stylesheets="@../Style/Page3Style.css" text="Help" />
+            <Button fx:id="btnBack" layoutX="25.0" layoutY="190.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="108.0" style="-fx-text-fill: red; -fx-border-color: red;" stylesheets="@../Style/Page3Style.css" text="Back" />
+            <Label layoutX="147.0" layoutY="194.0" prefHeight="40.0" prefWidth="189.0" text="Nhấn Back để quay lại trang trước" />
+            <Button fx:id="btnInfection" layoutX="23.0" layoutY="234.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="111.0" style="-fx-text-fill: red; -fx-border-color: red;" stylesheets="@../Style/Page3Style.css" text="Infection">
+               <font>
+                  <Font name="Ink Free" size="21.0" />
+               </font>
+            </Button>
+            <FontAwesomeIconView fill="#b90a0a" glyphName="CLOSE" layoutX="356.0" layoutY="173.0" size="35" />
+            <Text layoutX="146.0" layoutY="258.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nhấn Infection để xem quá trình lây truyền của virus " wrappingWidth="182.908203125" />
+            <Line endX="9.0" endY="-20.0" layoutX="335.0" layoutY="146.0" startX="9.0" startY="155.0" stroke="#251f1e" />
+            <Text layoutX="398.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nhấn button để thoát chương trình" />
          </children>
       </AnchorPane>
    </center>

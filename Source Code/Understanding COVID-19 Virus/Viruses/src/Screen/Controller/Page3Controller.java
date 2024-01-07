@@ -4,9 +4,9 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import Model.Model;
-import Virus.Virus;
-import Virus.VirusWithLipid;
-import Virus.VirusWithoutLipid;
+import Virus.GUI_Virus;
+import Virus.GUI_Enveloped_Virus;
+import Virus.GUI_Non_Enveloped_Virus;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -41,7 +41,7 @@ public class Page3Controller implements Initializable {
 	@FXML
 	private Button close_btn;
 	
-	private Virus virusSelected;
+	private GUI_Virus virusSelected;
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -67,12 +67,12 @@ public class Page3Controller implements Initializable {
 	}
 
 	private void onBack() {
-		if (virusSelected instanceof VirusWithLipid) {
+		if (virusSelected instanceof GUI_Enveloped_Virus) {
 			Stage stage = (Stage) nameLabel.getScene().getWindow();
 			Model.getInstance().getViewFactory().closeStage(stage);
 			Model.getInstance().getViewFactory().showListVirusWithLipit();
 		}
-		else if (virusSelected instanceof VirusWithoutLipid) {
+		else if (virusSelected instanceof GUI_Non_Enveloped_Virus) {
 			Stage stage = (Stage) nameLabel.getScene().getWindow();
 			Model.getInstance().getViewFactory().closeStage(stage);
 			Model.getInstance().getViewFactory().showListVirusWithoutLipit();

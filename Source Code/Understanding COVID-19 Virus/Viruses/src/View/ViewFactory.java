@@ -1,6 +1,6 @@
 package View;
 
-import Virus.Virus;
+import Virus.GUI_Virus;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.fxml.FXMLLoader;
@@ -14,13 +14,13 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 public class ViewFactory {
-    private Virus virusSelected = null;
+    private GUI_Virus virusSelected = null;
 
-    public void setVirusSelected(Virus virus) {
-        this.virusSelected = virus;
+    public void setVirusSelected(GUI_Virus gUI_Virus) {
+        this.virusSelected = gUI_Virus;
     }
 
-    public Virus getVirusSelected() {
+    public GUI_Virus getVirusSelected() {
         return virusSelected;
     }
 
