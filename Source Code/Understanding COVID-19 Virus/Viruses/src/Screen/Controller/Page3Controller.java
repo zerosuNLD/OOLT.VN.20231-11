@@ -62,6 +62,8 @@ public class Page3Controller implements Initializable {
 		Image image = new Image(getClass().getResourceAsStream(linkImage));
 		imageView.setImage(image);
 		introductionLabel.setText(virusSelected.getIntroduction());
+		introductionLabel.setWrapText(true);  
+	    introductionLabel.setMaxWidth(400);   
 	}
 
 	private void onBack() {

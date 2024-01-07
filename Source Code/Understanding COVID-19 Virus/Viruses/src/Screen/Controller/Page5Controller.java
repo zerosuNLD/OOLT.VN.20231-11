@@ -69,12 +69,10 @@ public class Page5Controller implements Initializable {
 	private void setDataOnScene() {
 		title.setText("Video the process of virus " + virus.getName() + " infection into the human body");
 		String linkVideoString = virus.getLinkVideoString();
-		System.out.println(linkVideoString);
 		file = new File(linkVideoString);
 		media = new Media(file.toURI().toString());
 		mediaPlayer = new MediaPlayer(media);
 		mediaView.setMediaPlayer(mediaPlayer);
-
 	}
 
 	private void playMedia() {

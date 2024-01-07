@@ -55,6 +55,8 @@ public class individualController implements Initializable {
 		name.setText(virus.getName());
 		title.setText("The distinct transmission of the virus " + virus.getName());
 		individualLabel.setText(virus.getIndividual());
+		individualLabel.setWrapText(true);  
+	    individualLabel.setMaxWidth(610);  
 	}
 
 	private void onInfection() {

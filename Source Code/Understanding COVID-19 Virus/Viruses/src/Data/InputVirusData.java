@@ -13,10 +13,10 @@ import Virus.VirusWithoutLipid;
 public class InputVirusData {
 
 	static VirusWithLipid covid = new VirusWithLipid(001, "COVID-19", "Nucleic Acid + Capsid", "Virus With Lipit",
-			"introduction", "individual", "/Screen/XML/Image/covid.jpg", "/Screen/XML/Image/conDuongLayNhiemHiv.jpg","Viruses/src/DataBase/Video/1.mp4");
+			"introduction By using y2mate.com.cn you can easily convert YouTube URL to mp3 (audio) or mp4 (video) files and download them for free.", "individual", "/Screen/XML/Image/covid.jpg", "/Screen/XML/Image/conDuongLayNhiemHiv.jpg","Viruses/src/Data/Video/1.mp4");
 
 	static VirusWithLipid rotavirus = new VirusWithLipid(002, "Rotaviruses", "Nucleic Acid + Capsid", "Virus With Lipit",
-			"introduction", "individual", "/Screen/XML/Image/rotaviruses.jpg", "/Screen/XML/Image/conDuongLayNhiemHiv.jpg","Viruses/src/DataBase/Video/1.mp4");
+			"introduction", "individual", "/Screen/XML/Image/rotaviruses.jpg", "/Screen/XML/Image/conDuongLayNhiemHiv.jpg","Viruses/src/Data/Video/1.mp4");
 
 	static VirusWithoutLipid hiv = new VirusWithoutLipid(001, "HIV", "Nucleic Acid + Capsid", "Virus Without Lipit",
 			"Intro", "Infection", "/Screen/XML/Image/HIV.jpg", "/Screen/XML/Image/conDuongLayNhiemHiv.jpg", "Viruses/src/Data/Video/1.mp4");

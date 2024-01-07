@@ -5,8 +5,6 @@ import Repository.Repository;
 import View.ViewFactory;
 
 public class Model{
-	@SuppressWarnings("unused")
-	private static Model instance;
 	private final ViewFactory viewFactory;
 	private static Model model;
 	
