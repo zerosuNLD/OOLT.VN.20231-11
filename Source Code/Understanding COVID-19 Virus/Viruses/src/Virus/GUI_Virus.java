@@ -1,10 +1,10 @@
 package Virus;
 
-public abstract class Virus implements Infection {
+public abstract class GUI_Virus implements Infection {
     protected String name;
     protected String structure;
 
-    public Virus(String name, String structure) {
+    public GUI_Virus(String name, String structure) {
         this.name = name;
         this.structure = structure;
     }

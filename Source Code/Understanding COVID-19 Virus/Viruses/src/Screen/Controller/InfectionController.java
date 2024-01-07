@@ -4,7 +4,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import Model.Model;
-import Virus.Virus;
+import Virus.GUI_Virus;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -39,11 +39,11 @@ public class InfectionController implements Initializable {
 	@FXML
 	private Button close_btn;
 	
-	private Virus virus;
+	private GUI_Virus gUI_Virus;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		virus = Model.getInstance().getViewFactory().getVirusSelected();
+		gUI_Virus = Model.getInstance().getViewFactory().getVirusSelected();
 		
 		setDataOnScene();
 		
@@ -54,9 +54,9 @@ public class InfectionController implements Initializable {
 	}
 	
 	private void setDataOnScene() {
-		title.setText(virus.getName());
+		title.setText(gUI_Virus.getName());
 		
-		String linkImage = virus.getImage2Link();
+		String linkImage = gUI_Virus.getImage2Link();
 		Image image = new Image(getClass().getResourceAsStream(linkImage));
 		imageView.setImage(image);
 	}

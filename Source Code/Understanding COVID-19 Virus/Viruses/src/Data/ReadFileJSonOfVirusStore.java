@@ -7,8 +7,8 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 import Repository.Repository;
-import Virus.VirusWithLipid;
-import Virus.VirusWithoutLipid;
+import Virus.GUI_Enveloped_Virus;
+import Virus.GUI_Non_Enveloped_Virus;
 
 public class ReadFileJSonOfVirusStore {
     private Repository repository;
@@ -47,12 +47,12 @@ public class ReadFileJSonOfVirusStore {
                 String linkVideoString = (String) viJsonObject.get("LinkVideo");
 
                 if (linkString == "Viruses/src/Data/VirusWithLipitStore.json") {
-                	 VirusWithLipid vsLipid = new VirusWithLipid(id, name, structure, type, introduction, individual,
+                	 GUI_Enveloped_Virus vsLipid = new GUI_Enveloped_Virus(id, name, structure, type, introduction, individual,
                              linkImage, linkImage2,linkVideoString);
 
                      repository.addVirusToRepo(vsLipid);
 				} else if (linkString == "Viruses/src/Data/VirusWithoutLipitStore.json") {
-					VirusWithoutLipid vsWithoutLipid = new VirusWithoutLipid(id, name, structure,type, introduction, individual,
+					GUI_Non_Enveloped_Virus vsWithoutLipid = new GUI_Non_Enveloped_Virus(id, name, structure,type, introduction, individual,
 							linkImage,linkImage2,linkVideoString);
 					repository.addVirusToRepo(vsWithoutLipid);
 				} else {

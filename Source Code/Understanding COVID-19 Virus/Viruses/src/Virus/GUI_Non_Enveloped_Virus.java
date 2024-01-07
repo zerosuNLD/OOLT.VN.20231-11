@@ -2,7 +2,7 @@ package Virus;
 
 import java.util.Scanner;
 
-public class VirusWithoutLipid extends Virus implements Infection {
+public class GUI_Non_Enveloped_Virus extends GUI_Virus implements Infection {
     private int id;
     private String type;
     private String introduction;
@@ -14,14 +14,14 @@ public class VirusWithoutLipid extends Virus implements Infection {
 //    private static int nbId = 0;
 
     // Constructors
-    public VirusWithoutLipid(int id,String name, String structure) {
+    public GUI_Non_Enveloped_Virus(int id,String name, String structure) {
         super(name, structure);
 //        this.id = nbId++;
         this.id = id;
     }
 
 
-    public VirusWithoutLipid(Integer id, String name, String structure, String type) {
+    public GUI_Non_Enveloped_Virus(Integer id, String name, String structure, String type) {
 		super(name, structure);
 		this.type = type;
 //        this.id = nbId++;
@@ -29,7 +29,7 @@ public class VirusWithoutLipid extends Virus implements Infection {
 	}
 
 
-	public VirusWithoutLipid(Integer id, String name, String structure, String type, String introduction, String individual,
+	public GUI_Non_Enveloped_Virus(Integer id, String name, String structure, String type, String introduction, String individual,
 			String link, String link2, String linkVideo) {
 		super(name, structure);
 		this.id = id;

@@ -6,7 +6,7 @@ import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-public class VirusWithLipid extends Virus implements Infection {
+public class GUI_Enveloped_Virus extends GUI_Virus implements Infection {
 	
     private int id;
     private String type;
@@ -19,14 +19,14 @@ public class VirusWithLipid extends Virus implements Infection {
 //    private static int nbId = 0;
 
     // Constructors
-    public VirusWithLipid(Integer id, String name, String structure) {
+    public GUI_Enveloped_Virus(Integer id, String name, String structure) {
         super(name, structure);
 //        id = nbId++;
         this.id = id;
     }
     
 
-    public VirusWithLipid(Integer id, String name, String structure, String type) {
+    public GUI_Enveloped_Virus(Integer id, String name, String structure, String type) {
 		super(name, structure);
 		this.type = type;
 //        id = nbId++;
@@ -34,7 +34,7 @@ public class VirusWithLipid extends Virus implements Infection {
 	}
 
     
-	public VirusWithLipid(Integer id, String name, String structure, String type, String introduction, String individual,
+	public GUI_Enveloped_Virus(Integer id, String name, String structure, String type, String introduction, String individual,
 			String link, String link2,String linkVideo) {
 		super(name, structure);
 		this.id = id;
