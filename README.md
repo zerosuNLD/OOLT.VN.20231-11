@@ -12,4 +12,4 @@ Vũ Đức Duy 20215018 : Vẽ package diagram, làm slide, code phụ
 
 Link Video
 
-https://drive.google.com/drive/folders/1TN8x1LSGu4zZqkkjVEcQowaz4Z9uZLqG?usp=sharing
+Meeting in _General_-20240107_212021-Meeting Recording.mp4
