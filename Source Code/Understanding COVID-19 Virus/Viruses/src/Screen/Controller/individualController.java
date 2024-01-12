@@ -9,6 +9,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -16,6 +18,9 @@ public class individualController implements Initializable {
 	@FXML
 	private AnchorPane AnchorPaneCenter;
 
+	@FXML
+	private ImageView imageView;
+	
 	@FXML
 	private Button btnBack;
 
@@ -57,12 +62,18 @@ public class individualController implements Initializable {
 		individualLabel.setText(gUI_Virus.getIndividual());
 		individualLabel.setWrapText(true);  
 	    individualLabel.setMaxWidth(610);  
+	    
+	    String linkImage = gUI_Virus.getImage2Link();
+		Image image = new Image(getClass().getResourceAsStream(linkImage));
+		imageView.setImage(image);
+
+		gUI_Virus.infection();
 	}
 
 	private void onInfection() {
 		Stage stage = (Stage) title.getScene().getWindow();
 		Model.getInstance().getViewFactory().closeStage(stage);
-		Model.getInstance().getViewFactory().showInfectionScene();
+		Model.getInstance().getViewFactory().showStructureScene();
 	}
 
 	private void onScene5() {

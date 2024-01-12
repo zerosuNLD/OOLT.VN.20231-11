@@ -40,7 +40,7 @@ public class ReadFileJSonOfVirusStore {
 				String structure = (String) viJsonObject.get("Structure");
 				String type = (String) viJsonObject.get("Type");
 				String introduction = (String) viJsonObject.get("Introduction");
-				String infectionString = (String) viJsonObject.get("Infection");
+				String infectionString = (String) viJsonObject.get("Structure2");
 				String individual = (String) viJsonObject.get("Individual");
 				String linkImage = (String) viJsonObject.get("LinkImage");
 				String linkImage2 = (String) viJsonObject.get("LinkImage2");

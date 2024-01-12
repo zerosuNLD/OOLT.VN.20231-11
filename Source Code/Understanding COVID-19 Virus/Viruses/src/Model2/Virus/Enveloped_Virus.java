@@ -30,5 +30,8 @@ public abstract class Enveloped_Virus  extends Virus implements In_out_Element {
 	
 	
 	public String putString() {return null;}
+	
+	
+	
 
 }

@@ -7,16 +7,20 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFX"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JSON"/>
-	<classpathentry kind="lib" path="C:/Users/Admin/Downloads/Phần mềm tải về/json/fontawesomefx-commons-9.1.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Admin/Downloads/Phần mềm tải về/json/fontawesomefx-controls-9.1.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Admin/Downloads/Phần mềm tải về/json/fontawesomefx-emojione-3.1.1-9.1.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Admin/Downloads/Phần mềm tải về/json/fontawesomefx-fontawesome-4.7.0-9.1.2 (1).jar"/>
-	<classpathentry kind="lib" path="C:/Users/Admin/Downloads/Phần mềm tải về/json/fontawesomefx-fontawesome-4.7.0-9.1.2 (2).jar"/>
-	<classpathentry kind="lib" path="C:/Users/Admin/Downloads/Phần mềm tải về/json/fontawesomefx-fontawesome-4.7.0-9.1.2 (3).jar"/>
-	<classpathentry kind="lib" path="C:/Users/Admin/Downloads/Phần mềm tải về/json/fontawesomefx-fontawesome-4.7.0-9.1.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Admin/Downloads/Phần mềm tải về/json/fontawesomefx-materialdesignfont-2.0.26-9.1.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Admin/Downloads/Phần mềm tải về/json/fontawesomefx-materialicons-2.2.0-9.1.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Admin/Downloads/Phần mềm tải về/json/json-simple-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Admin/Desktop/HUST/OOP/Lib/Json_lib/json-simple-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Admin/Desktop/HUST/OOP/Lib/FontAwesome_lib/fontawesomefx-commons-9.1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Admin/Desktop/HUST/OOP/Lib/FontAwesome_lib/fontawesomefx-controls-9.1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Admin/Desktop/HUST/OOP/Lib/FontAwesome_lib/fontawesomefx-emojione-3.1.1-9.1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Admin/Desktop/HUST/OOP/Lib/FontAwesome_lib/fontawesomefx-fontawesome-4.7.0-9.1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Admin/Desktop/HUST/OOP/Lib/FontAwesome_lib/fontawesomefx-materialdesignfont-2.0.26-9.1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Admin/Desktop/HUST/OOP/Lib/FontAwesome_lib/fontawesomefx-materialicons-2.2.0-9.1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Admin/Desktop/HUST/OOP/Lib/JavaFX_lib/javafx.base.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Admin/Desktop/HUST/OOP/Lib/JavaFX_lib/javafx.controls.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Admin/Desktop/HUST/OOP/Lib/JavaFX_lib/javafx.fxml.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Admin/Desktop/HUST/OOP/Lib/JavaFX_lib/javafx.graphics.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Admin/Desktop/HUST/OOP/Lib/JavaFX_lib/javafx.media.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Admin/Desktop/HUST/OOP/Lib/JavaFX_lib/javafx.swing.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Admin/Desktop/HUST/OOP/Lib/JavaFX_lib/javafx.web.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Admin/Desktop/HUST/OOP/Lib/JavaFX_lib/javafx-swt.jar"/>
 	<classpathentry kind="output" path="Viruses/bin"/>
 </classpath>

@@ -7,22 +7,32 @@ import Model.Model;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class HelpController implements Initializable {
-	@FXML
-	private Button close_btn;
+    @FXML
+    private AnchorPane AnchorPane;
 
-	@FXML
-	private Label helpLabel;
+    @FXML
+    private Button btnBack;
+
+    @FXML
+    private Button btnHelp;
+
+    @FXML
+    private Button close_btn;
+
+    @FXML
+    private Button infection_btn;
+
+    @FXML
+    private Button structure_btn;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
 		close_btn.setOnAction(event -> onClose());
-		helpLabel.setWrapText(true); 
-		helpLabel.setMaxWidth(550);
 	}
 
 	private void onClose() {

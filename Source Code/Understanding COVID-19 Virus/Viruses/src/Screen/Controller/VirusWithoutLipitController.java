@@ -67,7 +67,7 @@ public class VirusWithoutLipitController implements Initializable {
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		repo = Model.getInstance().getVirusWithoutLipitRepository();
 
-		idColumn.setCellValueFactory(new PropertyValueFactory<GUI_Virus, Integer>("ID"));
+		idColumn.setCellValueFactory(new PropertyValueFactory<GUI_Virus, Integer>("Id"));
 		nameColumn.setCellValueFactory(new PropertyValueFactory<GUI_Virus, String>("name"));
 		structureColumn.setCellValueFactory(new PropertyValueFactory<GUI_Virus, String>("structure"));
 		typeColumn.setCellValueFactory(new PropertyValueFactory<GUI_Virus, String>("type"));

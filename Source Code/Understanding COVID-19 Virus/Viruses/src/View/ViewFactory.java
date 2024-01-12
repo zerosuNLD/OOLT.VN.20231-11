@@ -48,8 +48,8 @@ public class ViewFactory {
         createStage(loader);
     }
 
-    public void showInfectionScene() {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Screen/XML/FXMLFile/infection.fxml"));
+    public void showStructureScene() {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Screen/XML/FXMLFile/structure.fxml"));
 
         createStage(loader);
     }

@@ -18,7 +18,6 @@ public class Repository {
 
 		if (!listVirus.contains(newVirus)) {
 			listVirus.add(newVirus);
-//			System.out.println("Virus added successfully!");
 		} else {
 			System.out.println("Virus already exists in the repository. Duplicate entries are not allowed.");
 		}
@@ -30,6 +29,12 @@ public class Repository {
 		}
 	}
 
+	public void addRepository(Repository otherRepository) {
+        if (otherRepository != null) {
+            listVirus.addAll(otherRepository.getListVirus());
+        }
+    }	
+	
 	public void removeVirusFromRepo(GUI_Virus virusToRemove) {
 		if (listVirus.contains(virusToRemove)) {
 			listVirus.remove(virusToRemove);
@@ -48,11 +53,4 @@ public class Repository {
 	public ObservableList<GUI_Virus> getListVirus() {
 		return listVirus;
 	}
-	
-    public void addRepository(Repository otherRepository) {
-        if (otherRepository != null) {
-            listVirus.addAll(otherRepository.getListVirus());
-        }
-    }	
-	
 }

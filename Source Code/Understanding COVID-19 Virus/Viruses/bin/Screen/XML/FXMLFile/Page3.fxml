@@ -42,14 +42,14 @@
                   <Insets left="5.0" />
                </padding>
             </Label>
-            <Label fx:id="introductionLabel" alignment="CENTER" layoutX="330.0" layoutY="57.0" prefHeight="241.0" prefWidth="412.0" stylesheets="@../Style/Page3Style.css">
+            <Label fx:id="introductionLabel" alignment="TOP_CENTER" layoutX="330.0" layoutY="54.0" prefHeight="262.0" prefWidth="412.0" stylesheets="@../Style/Page3Style.css">
                <font>
                   <Font name="Ink Free" size="15.0" />
                </font>
             </Label>
          </children>
       </AnchorPane>
-      <Button fx:id="btnInfection" layoutX="327.0" layoutY="405.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="411.0" stylesheets="@../Style/Page3Style.css" text="Infection">
+      <Button fx:id="structure_btn" layoutX="327.0" layoutY="418.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="411.0" stylesheets="@../Style/Page3Style.css" text="View Structure">
          <font>
             <Font name="Ink Free" size="21.0" />
          </font>

@@ -77,7 +77,7 @@
 	-fx-border-width: 5 0 0 0;
 }
 
-#btnInfection {
+#structure_btn,#infection_btn {
     -fx-background-color: transparent;
     -fx-text-fill: #03e9f4;
     -fx-font-size: 16px;
@@ -90,7 +90,7 @@
 
 }
 
-#btnInfection:hover
+#structure_btn:hover,#infection_btn:hover
 {
     -fx-background-color: #03e9f4;
     -fx-text-fill: #fff;

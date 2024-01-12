@@ -7,7 +7,7 @@ public abstract class Protein_molecules implements Biological_Element {
 	protected String identity;
 	protected ArrayList<String> structure;
 	
-
+//
 	public Protein_molecules(ArrayList<String> structure) {
 		// TODO Auto-generated constructor stub
 	}

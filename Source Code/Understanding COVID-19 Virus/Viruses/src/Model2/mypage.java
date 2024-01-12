@@ -1,8 +1,5 @@
 package Model2;
 
-import javax.swing.*;
-import java.awt.*;
-
 public class mypage extends javax.swing.JFrame {
 
     /**
