@@ -4,11 +4,13 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import Model.Model;
-import Virus.Virus;
+import Virus.GUI_Virus;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -16,6 +18,9 @@ public class individualController implements Initializable {
 	@FXML
 	private AnchorPane AnchorPaneCenter;
 
+	@FXML
+	private ImageView imageView;
+	
 	@FXML
 	private Button btnBack;
 
@@ -37,11 +42,11 @@ public class individualController implements Initializable {
 	@FXML
 	private Button close_btn;
 	
-	private Virus virus;
+	private GUI_Virus gUI_Virus;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		virus = Model.getInstance().getViewFactory().getVirusSelected();
+		gUI_Virus = Model.getInstance().getViewFactory().getVirusSelected();
 
 		setDataOnScene();
 
@@ -52,15 +57,23 @@ public class individualController implements Initializable {
 	}
 
 	private void setDataOnScene() {
-		name.setText(virus.getName());
-		title.setText("The distinct transmission of the virus " + virus.getName());
-		individualLabel.setText(virus.getIndividual());
+		name.setText(gUI_Virus.getName());
+		title.setText("The distinct transmission of the virus " + gUI_Virus.getName());
+		individualLabel.setText(gUI_Virus.getIndividual());
+		individualLabel.setWrapText(true);  
+	    individualLabel.setMaxWidth(610);  
+	    
+	    String linkImage = gUI_Virus.getImage2Link();
+		Image image = new Image(getClass().getResourceAsStream(linkImage));
+		imageView.setImage(image);
+
+		gUI_Virus.infection();
 	}
 
 	private void onInfection() {
 		Stage stage = (Stage) title.getScene().getWindow();
 		Model.getInstance().getViewFactory().closeStage(stage);
-		Model.getInstance().getViewFactory().showInfectionScene();
+		Model.getInstance().getViewFactory().showStructureScene();
 	}
 
 	private void onScene5() {

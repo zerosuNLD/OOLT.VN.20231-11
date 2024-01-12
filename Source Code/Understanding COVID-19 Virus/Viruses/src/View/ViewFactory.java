@@ -1,23 +1,26 @@
 package View;
 
-import Virus.Virus;
+import Virus.GUI_Virus;
+import javafx.beans.property.DoubleProperty;
+import javafx.beans.property.SimpleDoubleProperty;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.control.ButtonType;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 public class ViewFactory {
-    private Virus virusSelected = null;
+    private GUI_Virus virusSelected = null;
 
-    public void setVirusSelected(Virus virus) {
-        this.virusSelected = virus;
+    public void setVirusSelected(GUI_Virus gUI_Virus) {
+        this.virusSelected = gUI_Virus;
     }
 
-    public Virus getVirusSelected() {
+    public GUI_Virus getVirusSelected() {
         return virusSelected;
     }
 
@@ -45,8 +48,8 @@ public class ViewFactory {
         createStage(loader);
     }
 
-    public void showInfectionScene() {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Screen/XML/FXMLFile/infection.fxml"));
+    public void showStructureScene() {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Screen/XML/FXMLFile/structure.fxml"));
 
         createStage(loader);
     }
@@ -81,9 +84,9 @@ public class ViewFactory {
         scene = new Scene(root);
         Stage stage = new Stage();
         stage.setScene(scene);
-
-        stage.initStyle(StageStyle.UNDECORATED);
-
+        
+        moveStage(stage);
+        
         stage.show();
     }
 
@@ -108,5 +111,21 @@ public class ViewFactory {
         stage.close();
     }
 
+    private void moveStage(Stage stage) {
+    	final DoubleProperty xOffset = new SimpleDoubleProperty(0);
+    	final DoubleProperty yOffset = new SimpleDoubleProperty(0);
+
+    	stage.initStyle(StageStyle.UNDECORATED);
+
+    	stage.getScene().getRoot().setOnMousePressed((MouseEvent event) -> {
+             xOffset.set(event.getSceneX());
+             yOffset.set(event.getSceneY());
+         });
+
+         stage.getScene().getRoot().setOnMouseDragged((MouseEvent event) -> {
+             stage.setX(event.getScreenX() - xOffset.get());
+             stage.setY(event.getScreenY() - yOffset.get());
+         });
+	}
 
 }

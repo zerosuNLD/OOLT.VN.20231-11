@@ -5,7 +5,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import Model.Model;
-import Virus.Virus;
+import Virus.GUI_Virus;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -50,11 +50,11 @@ public class Page5Controller implements Initializable {
 	private Media media;
 	private MediaPlayer mediaPlayer;
 
-	private Virus virus;
+	private GUI_Virus gUI_Virus;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		virus = Model.getInstance().getViewFactory().getVirusSelected();
+		gUI_Virus = Model.getInstance().getViewFactory().getVirusSelected();
 
 		setDataOnScene();
 
@@ -67,14 +67,12 @@ public class Page5Controller implements Initializable {
 	}
 
 	private void setDataOnScene() {
-		title.setText("Video the process of virus " + virus.getName() + " infection into the human body");
-		String linkVideoString = virus.getLinkVideoString();
-		System.out.println(linkVideoString);
+		title.setText("Video the process of virus " + gUI_Virus.getName() + " infection into the human body");
+		String linkVideoString = gUI_Virus.getLinkVideoString();
 		file = new File(linkVideoString);
 		media = new Media(file.toURI().toString());
 		mediaPlayer = new MediaPlayer(media);
 		mediaView.setMediaPlayer(mediaPlayer);
-
 	}
 
 	private void playMedia() {

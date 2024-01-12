@@ -5,7 +5,7 @@ import java.util.ResourceBundle;
 
 import Model.Model;
 import Repository.Repository;
-import Virus.Virus;
+import Virus.GUI_Virus;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -33,35 +33,35 @@ public class VirusWithLipitController implements Initializable {
 	private Button btnNextButton;
 
 	@FXML
-	private TableColumn<Virus, Integer> idColumn;
+	private TableColumn<GUI_Virus, Integer> idColumn;
 
 	@FXML
-	private TableColumn<Virus, String> nameColumn;
+	private TableColumn<GUI_Virus, String> nameColumn;
 
 	@FXML
-	private TableColumn<Virus, String> structureColumn;
+	private TableColumn<GUI_Virus, String> structureColumn;
 
 	@FXML
-	private TableView<Virus> table;
+	private TableView<GUI_Virus> table;
 
 	@FXML
-	private TableColumn<Virus, String> typeColumn;
+	private TableColumn<GUI_Virus, String> typeColumn;
 
 	@FXML
 	private Button close_btn;
 	
 	private Repository repo;
 
-	private ObservableList<Virus> virusList;
+	private ObservableList<GUI_Virus> virusList;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		repo = Model.getInstance().getVirusWithLipitRepository();
 
-		idColumn.setCellValueFactory(new PropertyValueFactory<Virus, Integer>("ID"));
-		nameColumn.setCellValueFactory(new PropertyValueFactory<Virus, String>("name"));
-		structureColumn.setCellValueFactory(new PropertyValueFactory<Virus, String>("structure"));
-		typeColumn.setCellValueFactory(new PropertyValueFactory<Virus, String>("type"));
+		idColumn.setCellValueFactory(new PropertyValueFactory<GUI_Virus, Integer>("Id"));
+		nameColumn.setCellValueFactory(new PropertyValueFactory<GUI_Virus, String>("name"));
+		structureColumn.setCellValueFactory(new PropertyValueFactory<GUI_Virus, String>("structure"));
+		typeColumn.setCellValueFactory(new PropertyValueFactory<GUI_Virus, String>("type"));
 		virusList = FXCollections.observableArrayList(repo.getListVirus());
 		table.setItems(virusList);
 
@@ -75,10 +75,10 @@ public class VirusWithLipitController implements Initializable {
 
 	private void addListeners() {
 		btnNextButton.setDisable(true);
-		table.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Virus>() {
+		table.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<GUI_Virus>() {
 
 			@Override
-			public void changed(ObservableValue<? extends Virus> observable, Virus oldValue, Virus newValue) {
+			public void changed(ObservableValue<? extends GUI_Virus> observable, GUI_Virus oldValue, GUI_Virus newValue) {
 				// TODO Auto-generated method stub
 				Model.getInstance().getViewFactory().setVirusSelected(newValue);
 				btnNextButton.setDisable(newValue == null);

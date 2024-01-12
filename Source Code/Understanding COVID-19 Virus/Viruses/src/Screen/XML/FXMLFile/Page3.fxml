@@ -23,10 +23,6 @@
       </AnchorPane>
       <AnchorPane fx:id="AnchorPaneCenter" layoutY="103.0" prefHeight="409.0" prefWidth="768.0" style="-fx-background-color: #080D19;" stylesheets="@../Style/Page3Style.css">
          <children>
-            <Label fx:id="introductionLabel" alignment="CENTER" layoutX="332.0" layoutY="55.0" prefHeight="235.0" prefWidth="411.0" stylesheets="@../Style/Page3Style.css" text="Introdution">
-               <font>
-                  <Font name="Ink Free" size="15.0" />
-               </font></Label>
             <ImageView fx:id="imageView" fitHeight="211.0" fitWidth="292.0" layoutX="28.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Image/HIV.jpg" />
@@ -46,9 +42,14 @@
                   <Insets left="5.0" />
                </padding>
             </Label>
+            <Label fx:id="introductionLabel" alignment="TOP_CENTER" layoutX="330.0" layoutY="54.0" prefHeight="262.0" prefWidth="412.0" stylesheets="@../Style/Page3Style.css">
+               <font>
+                  <Font name="Ink Free" size="15.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
-      <Button fx:id="btnInfection" layoutX="327.0" layoutY="405.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="411.0" stylesheets="@../Style/Page3Style.css" text="Infection">
+      <Button fx:id="structure_btn" layoutX="327.0" layoutY="418.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="411.0" stylesheets="@../Style/Page3Style.css" text="View Structure">
          <font>
             <Font name="Ink Free" size="21.0" />
          </font>
