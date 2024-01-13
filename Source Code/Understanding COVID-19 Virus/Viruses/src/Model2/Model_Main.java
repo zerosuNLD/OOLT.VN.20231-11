@@ -4,6 +4,8 @@ import java.awt.desktop.ScreenSleepEvent;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
+import Model2.Virus.Acid_Nucleic;
+import Model2.Virus.Capsid;
 import Model2.Virus.Sars_Covi_2;
 
 public class Model_Main {
@@ -15,15 +17,20 @@ public class Model_Main {
 
     
 	public static void main(String args[]) { 
-//		Sars_Covi_2 s = new Sars_Covi_2();
+		//Model_MainGUI m = new Model_MainGUI(); m.setVisible(true);
+        
+//		Acid_Nucleic acid_Nucleic = new Acid_Nucleic(Sars_Covi_2.class.toString());
 //		
-//		s.getAcid_Nucleic().getIdentity();
+//		Capsid capsid = new Capsid(Sars_Covi_2.class.toString(), "S,N,E,M Proteins"); 
+//		//Sars_Covi_2 s = new Sars_Covi_2(ac,capsid);
+//		
+//		//s.getAcid_Nucleic().getIdentity();
 //		
 //		Object ob = null;  
 //		Class classDefinition;
 //					
 //			try {
-//				Class[] t = {int.class};
+//				Class[] t = {String.class};
 //				
 //				Class classDef = Class.forName("Model2.Lipid");   
 //				Constructor cons = classDef.getConstructor(t);
@@ -54,8 +61,8 @@ public class Model_Main {
 		
 	
 	}
-}
 
+}
 
 
 

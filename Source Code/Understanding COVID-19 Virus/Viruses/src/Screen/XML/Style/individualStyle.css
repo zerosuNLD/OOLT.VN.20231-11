@@ -1,4 +1,4 @@
-#btnBack,#btnNext
+#btnBack,#btnNext, #individual_btn
 {
     -fx-background-color: transparent;
     -fx-text-fill: #03e9f4;
@@ -12,7 +12,7 @@
 }
 
 
-#btnBack:hover,#btnNext:hover
+#btnBack:hover,#btnNext:hover, #individual_btn:hover
 {
 	-fx-background-color: #03e9f4;
     -fx-text-fill: #fff;
@@ -24,7 +24,7 @@
 
 
 
-#btnBack:pressed,#btnNext:pressed
+#btnBack:pressed,#btnNext:pressed, #individual_btn:pressed
 {
      -fx-padding: 10 15 13 15;
      -fx-background-insets: 2 0 0 0,2 0 3 0,2 0 4 0,2 0 5 0;
@@ -61,7 +61,7 @@
 }
 
 
-#individualLabel{
+#individualLabel,#infection_label{
 	-fx-font-family: 'Ink Free';
 	-fx-text-fill: black;
     -fx-background-color:  #B0B0B0;

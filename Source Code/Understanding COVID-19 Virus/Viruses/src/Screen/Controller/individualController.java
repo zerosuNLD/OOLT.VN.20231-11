@@ -67,13 +67,13 @@ public class individualController implements Initializable {
 		Image image = new Image(getClass().getResourceAsStream(linkImage));
 		imageView.setImage(image);
 
-		gUI_Virus.infection();
+//		gUI_Virus.infection();
 	}
 
 	private void onInfection() {
 		Stage stage = (Stage) title.getScene().getWindow();
 		Model.getInstance().getViewFactory().closeStage(stage);
-		Model.getInstance().getViewFactory().showStructureScene();
+		Model.getInstance().getViewFactory().showInfectionScene();
 	}
 
 	private void onScene5() {

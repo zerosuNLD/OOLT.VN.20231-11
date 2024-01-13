@@ -71,6 +71,13 @@ public class ViewFactory {
 
         createStage(loader);
     }
+    
+    public void showInfectionScene() {
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("/Screen/XML/FXMLFile/infection.fxml"));
+		
+		createStage(loader);
+	}
+
 
     private void createStage(FXMLLoader loader) {
         Scene scene = null;
@@ -107,6 +114,7 @@ public class ViewFactory {
         });
     }
 
+        
     public void closeStage(Stage stage) {
         stage.close();
     }

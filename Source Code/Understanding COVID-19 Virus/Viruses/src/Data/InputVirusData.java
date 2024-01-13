@@ -30,7 +30,19 @@ public class InputVirusData {
 			"Non-Enveloped virus",
 			"The Rhinovirus is a single-stranded RNA virus with a positive sense, belonging to the Enterovirus genus in the Picornaviridae family. Rhinovirus is the most prevalent infectious agent in humans and is the primary cause of the common cold.",
 			"The Rhinovirus has a single-stranded positive-sense RNA genome with a length ranging from 7200 to 8500 nucleotides. At the 5' end of the genome is a protein encoded by the virus and, similar to mRNA in mammals, it has a long 3' poly-A tail. The structural protein is encoded in the 5' region of the genome, and there is a non-structural region at the 3' end. This pattern is consistent across all picornaviruses. The virus particles themselves are non-enveloped and have a twelve-sided structure.",
-			"Individual", "/Screen/XML/Image/rhinovirus.jpg", "/Screen/XML/Image/rhinovirus_LifeCycle.jpg",
+			"Transmission through direct contact:\n"
+			+ "Rhinovirus primarily spreads through direct contact with human cells, especially the mucous membrane of the respiratory tract.\n"
+			+ "Structural diversity:\n"
+			+ "Rhinovirus has a structure that does not include a lipid envelope but instead uses a protein coat to protect its genetic material.\n"
+			+ "Cell entry mechanism:\n"
+			+ "Rhinovirus utilizes proteins on its surface to interact with receptors on respiratory tract cells, initiating the infection process.\n"
+			+ "Survival outside the body environment:\n"
+			+ "Rhinovirus may be less stable when exposed to the external environment and typically does not survive for an extended period on non-living surfaces.\n"
+			+ "Preventive measures:\n"
+			+ "Preventive measures such as frequent handwashing, maintaining distance, and wearing masks remain crucial to prevent the transmission of rhinovirus.\n"
+			+ "Special impact on cells:\n"
+			+ "Rhinovirus can interact with the cell membrane of the respiratory tract, causing changes and alterations within cells to facilitate the infection process.", 
+			"/Screen/XML/Image/rhinovirus.jpg", "/Screen/XML/Image/rhinovirus_LifeCycle.jpg",
 			"Viruses/src/Data/Video/Rhinovirus.mp4");
 
 	static GUI_Non_Enveloped_Virus norovirus = new GUI_Non_Enveloped_Virus(002, "norovirus", "Nucleic Acid + Capsid",

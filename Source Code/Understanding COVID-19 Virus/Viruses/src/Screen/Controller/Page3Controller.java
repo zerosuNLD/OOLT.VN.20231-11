@@ -62,6 +62,9 @@ public class Page3Controller implements Initializable {
 		Image image = new Image(getClass().getResourceAsStream(linkImage));
 		imageView.setImage(image);
 		introductionLabel.setText(virusSelected.getIntroduction());
+		
+		introductionLabel.setMaxHeight(Double.MAX_VALUE);
+		introductionLabel.setPrefHeight(280);
 		introductionLabel.setWrapText(true);
 		introductionLabel.setMaxWidth(400);
 	}
@@ -85,7 +88,6 @@ public class Page3Controller implements Initializable {
 	}
 
 	private void onHelp() {
-
 		Model.getInstance().getViewFactory().showHelp();
 	}
 

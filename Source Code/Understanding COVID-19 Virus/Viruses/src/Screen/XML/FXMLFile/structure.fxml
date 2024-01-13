@@ -28,13 +28,13 @@
    <center>
       <AnchorPane fx:id="AnchorPaneCenter" prefHeight="392.0" prefWidth="768.0" style="-fx-background-color: #080D19;" stylesheets="@../Style/infectionStyle.css" BorderPane.alignment="CENTER">
          <children>
-            <Label fx:id="infectionLabel" alignment="TOP_CENTER" layoutX="25.0" layoutY="99.0" prefHeight="254.0" prefWidth="718.0" text="Structure of virus" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0">
+            <Label fx:id="infectionLabel" alignment="TOP_CENTER" layoutX="25.0" layoutY="97.0" prefHeight="254.0" prefWidth="718.0" text="Structure of virus" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button fx:id="btnNext" layoutX="598.0" layoutY="355.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="140.0" text="Next" />
-            <Label layoutX="108.0" layoutY="22.0" prefHeight="65.0" prefWidth="638.0" style="-fx-border-color: #03e9f4; -fx-border-width: 0 0 0 3;" stylesheets="@../Style/infectionStyle.css" text="    The detailed structure of the virus" textFill="#03e9f4">
+            <Button fx:id="btnNext" layoutX="567.0" layoutY="355.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="171.0" text="View Infection" />
+            <Label layoutX="108.0" layoutY="34.0" prefHeight="45.0" prefWidth="638.0" style="-fx-border-color: #03e9f4; -fx-border-width: 0 0 0 3;" stylesheets="@../Style/infectionStyle.css" text="    The detailed structure of the virus" textFill="#03e9f4">
                <font>
                   <Font name="Kristen ITC" size="15.0" />
                </font>

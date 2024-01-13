@@ -34,7 +34,7 @@ public class StructureController implements Initializable {
 	@FXML
 	private Label title;
 
-	GUI_Virus gUI_Virus;
+	private GUI_Virus gUI_Virus;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -43,7 +43,7 @@ public class StructureController implements Initializable {
 		setDataOnScene();
 
 		btnBack.setOnAction(event -> onScene3());
-		btnNext.setOnAction(event -> onIndividual());
+		btnNext.setOnAction(event -> onInfection());
 		btnHelp.setOnAction(event -> onHelp());
 		close_btn.setOnAction(event -> onClose());
 	}
@@ -62,10 +62,10 @@ public class StructureController implements Initializable {
 		Model.getInstance().getViewFactory().showScene3();
 	}
 
-	private void onIndividual() {
+	private void onInfection() {
 		Stage stage = (Stage) title.getScene().getWindow();
 		Model.getInstance().getViewFactory().closeStage(stage);
-		Model.getInstance().getViewFactory().showIndividualScene();
+		Model.getInstance().getViewFactory().showInfectionScene();
 	}
 
 	private void onHelp() {

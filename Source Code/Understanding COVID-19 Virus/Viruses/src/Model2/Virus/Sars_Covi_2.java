@@ -2,12 +2,16 @@ package Model2.Virus;
 
 import java.util.ArrayList;
 
+import Model2.Biological_Element;
+import Model2.Cell.Cell;
+
 public class Sars_Covi_2 extends Enveloped_Virus {
 	
 	public Sars_Covi_2(Acid_Nucleic ac, Capsid capsid) {
 		// TODO Auto-generated constructor stub
-		super();
-		
+		super(ac, capsid);
+		this.ac=ac; this.capsid=capsid;
+		this.des_cell="ECs";
 	}
 	
 //	public Sars_Covi_2() {
@@ -22,25 +26,25 @@ public class Sars_Covi_2 extends Enveloped_Virus {
 //		
 //	}
 	
-    public void uncoat() {
-    
-    };
-	
+ 
 	public void coated(Viral_Envelope env) {
 		
 	};
 	
 	
-	public void entry_signal() {};
+	
+	
+	
+	
 	
 	public void require_signal() {};
 	
-	public void transport_signal() {};
+//	public void transport_signal() {};
 				
 	public void exit_signal() {};
 	
 	
 	
-	public String putString() {return "Sars-covi 2";}
+	public String putString() {return "Sars-covi2";}
 
 }

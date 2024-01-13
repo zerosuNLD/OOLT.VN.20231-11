@@ -1,51 +1,108 @@
 package Model2.Virus;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 
 import javax.management.loading.PrivateClassLoader;
 
 import Model2.Biological_Element;
-
+import Model2.Cell.Cellular_organelle;
 import Virus.GUI_Virus;
 
 public class Acid_Nucleic implements Biological_Element {
-	private String Identity;
-	private  ArrayList<ArrayList<String>> gene_expression;
+	private String gene;
 	
-    
-	
-
-	public Acid_Nucleic(String identity,ArrayList<ArrayList<String>> gene_expression) {
+	//private final String gene_expression;
+	    	
+	public Acid_Nucleic(String gene) {
 		super();
-		Identity = identity;
-		this.gene_expression = gene_expression;
+		this.gene = gene;
+		
 	}
+//	ArrayList<ArrayList<String>>
+    
 
-	public Acid_Nucleic() {
-		// TODO Auto-generated constructor stub
-		
-		
-	}
+	
 	
     public void require_signal() {};
 	
-	public void transport_signal() {};
+	
+	
+	public Virus assembled(ArrayList<Biological_Element> co) {
+		Object ob = null; 
+		for(Biological_Element be: co) {
+			if(be instanceof Capsid) {
+				if(((Capsid) be).getGene().compareTo(this.gene)==0) {
+					
+						 
+						Class classDefinition;
+									
+							try {
+								Class[] t = {Acid_Nucleic.class,Capsid.class};
+								;
+								
+								Class classDef = Class.forName(this.gene);   
+								Constructor cons = classDef.getConstructor(t);
+								ob = cons.newInstance(this,(Capsid) be);
+							} catch (InstantiationException | IllegalAccessException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+						 catch (ClassNotFoundException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						} catch (NoSuchMethodException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						} catch (SecurityException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						} catch (IllegalArgumentException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						} catch (InvocationTargetException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						} 							
+				
+					
+					//co.addE(new );
+				}
+			}
+		}
+		return (Virus) ob;
+	}
 	
 	
 	
+	public String putString() {return "(Acid nuclecic + gene)";}
 	
-	public String putString() {return null;}
-	
-	public String getIdentity() {
-		return Identity;
+	public String getGene() {
+		return gene;
 	}
 
 
 
-	public ArrayList<ArrayList<String>>getGene_expression() {
-		return gene_expression;
-	}
+//	public ArrayList<ArrayList<String>>getGene_expression() {
+//		return gene_expression;
+//	}
 
-	
+//	public static void main(String args[]) {
+//		Acid_Nucleic ac = new  Acid_Nucleic("Model2.Virus.Sars_Covi_2");
+//		Capsid csCapsid = new Capsid("Model2.Virus.Sars_Covi_2", "abc");
+//		
+//		ArrayList<Biological_Element> list = new  ArrayList<>(); list.add(csCapsid);
+//				
+//		//System.out.println(ac.getGene());
+//	    System.out.println(ac.assembled(list).putString())	;
+		
+//}
 
 }
+
+
+
+
+
+

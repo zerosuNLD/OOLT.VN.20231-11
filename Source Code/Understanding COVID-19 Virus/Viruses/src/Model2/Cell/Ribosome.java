@@ -6,10 +6,16 @@ public class Ribosome extends Cellular_organelle {
 	
     public Ribosome() {}
 	
-    public void provide_Lipid(Biological_Element element) {}
+
 	
 	public void transport(Biological_Element element)  {}
 	
 	public void release(Biological_Element element) {}
+	
+	
+	public void x() {
+		
+		
+	}
 
 }

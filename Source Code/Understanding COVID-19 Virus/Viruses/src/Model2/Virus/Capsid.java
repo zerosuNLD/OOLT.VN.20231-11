@@ -4,18 +4,18 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import Model2.Biological_Element;
-import Model2.Protein_molecules;
+import Model2.Protein_molecule;
 import Virus.GUI_Virus;
 
-public class Capsid extends Protein_molecules  {
+public class Capsid extends Protein_molecule  {
 	
 	
 
-	public Capsid(String identity,ArrayList<String> structure) {
+	public Capsid(String gene,String structure) {
 		// TODO Auto-generated constructor stub
-		super(structure);
+		super(gene,structure);
 		this.structure=structure;
-		this.identity = identity;
+		this.gene = gene;
 	}
 	
 	
@@ -23,7 +23,16 @@ public class Capsid extends Protein_molecules  {
     
     public void require_signal() {};
 	
-	public void transport_signal() {};
+	public void transport_signal() {}
+
+
+
+
+	@Override
+	public String getGene() {
+		// TODO Auto-generated method stub
+		return this.gene;
+	};
 	
 	
 	
