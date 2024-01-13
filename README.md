@@ -1,6 +1,6 @@
 Phân công công việc
 
-Nguyễn Lương Duy 20204906 (Leader) : Code package Repository, Data, Model, View, Controller
+Nguyễn Lương Duy 20204960 (Leader) : Code package Repository, Data, Model, View, Controller
 
 Trần Khánh Duy 20215016 : Vẽ screen diagram, viết báo cáo, code package Virus, làm demo
 
